@@ -231,6 +231,10 @@ hidden nav */
     left: 0;
     top: 0;
 }
+@media(max-width: 1290px){.top-nav-hidden{
+    display: none
+}
+}
 .shop-hidden{
     position: absolute;
     left: 0;
@@ -287,7 +291,7 @@ hidden nav */
 }
 .collection-hidden ul li{
     width: 23%;
-    height: 19rem;
+    height: 25vh;
     position: relative;
     left: 0;
     top: 0;
