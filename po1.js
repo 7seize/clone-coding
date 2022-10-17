@@ -52,3 +52,8 @@ $(window).on('mousewheel',function(e){
         topsidebar.style.display = 'none';
     }
 });
+
+
+const subselect = document.querySelectorAll('.sub-select');
+const pu = document.querySelectorAll('.pu');
+const brand = document.querySelectorAll('.brand');

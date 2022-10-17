@@ -1,4 +1,4 @@
-@import url(../project/common.css);
+@import url(./common.css);
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;700&family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap');
 /* https://gallantry.com/ */
@@ -315,16 +315,16 @@ hidden nav */
     background-size: 100%;
 }
 .collection-hidden ul li:nth-child(1){
-    background-image: url(../project/img/collection-header/header_coll_1_img.jpg);
+    background-image: url(./img/collection-header/header_coll_1_img.jpg);
 }
 .collection-hidden ul li:nth-child(2){
-    background-image: url(../project/img/collection-header/header_coll_2_img.jpg);
+    background-image: url(./img/collection-header/header_coll_2_img.jpg);
 }
 .collection-hidden ul li:nth-child(3){
-    background-image: url(../project/img/collection-header/header_coll_3_img.jpg);
+    background-image: url(./img/collection-header/header_coll_3_img.jpg);
 }
 .collection-hidden ul li:nth-child(4){
-    background-image: url(../project/img/collection-header/header_coll_4_img.jpg);
+    background-image: url(./img/collection-header/header_coll_4_img.jpg);
 }
 .collection-hidden ul li a > div:nth-child(1){
     color: white;
@@ -612,7 +612,7 @@ main{
 }}
 
 .mid-top{
-    background-image: url(../project/img/hero-d_1920x.jpg);
+    background-image: url(./img/hero-d_1920x.jpg);
     background-position: top center;
     text-align: center;
     background-size: cover;
