@@ -1580,3 +1580,133 @@ addpage */
 .story-img >img{
     width: 100%;
 }
+
+
+/* ==================================================================
+=========================================================
+==================================================== */
+/* product */
+.product-page{
+    margin: 10rem 6rem;
+}
+.product-page-top{
+    display: flex;
+}
+.product-main{
+    display: flex;
+    width: 100%;
+}
+.product-main-left{
+    width: 50%;
+}
+.product-main-img{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.product-main-img > p{
+    width: 480px;
+    height: 480px;
+}
+.product-main-img > p >img{
+    width: 480px;
+    height: 480px;
+}
+
+.product-left-move{
+    width: 100px;
+    height: 500px;
+    line-height: 300px;
+} 
+.product-right-move{
+    width: 100px;
+    height: 500px;
+}
+
+.product-main-right{
+    width: 50%;
+}
+.product-mini-img{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.product-mini-img > a{
+    width: 20%;
+}
+.product-mini-img > a> img{
+    width: 100%;
+}
+.product-stock{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #a01515;
+    font-size: 11px;
+    line-height: 1.2;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+}
+.product-add-cart{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.product-btn{
+    width: 60%;
+}
+.product-btn > input{
+    width: 100%;
+    color: white;
+    background-color: #000;
+    height: 3rem
+}
+.product-count{
+    width: 35%;
+    height: 3rem;
+    display: flex;
+    text-align: center;
+    align-content: center;
+}
+.product-count > span{
+    display: block;
+    width: 3rem;
+    border: 1px solid black;
+}
+.product-count > input{
+    height: 100%;
+    text-align: center;
+}
+
+.product-add{
+    width: 60%;
+}
+
+.related-product{
+    text-align: center;
+    background-color: white;
+}
+.related-product >div{
+    display: flex;
+    margin-top: 1px solid black;
+}
+.product-details{
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+}
+.bot-product-related{
+    margin: 0 auto;
+    text-align: center;
+}
+.bot-product-related > div{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.bot-product-related > div> div{
+    width: 25%;
+    text-align: center;
+}
