@@ -1,26 +1,52 @@
 const shophidden = document.querySelector('.shop-hidden');
 const shop = document.querySelector('.shop');
 shop.onclick = function(){
-    shophidden.classList.toggle('active')
+    shophidden.classList.toggle('active');
+
+    if(
+        collectionhidden.classList.contains('active') ||
+        explorehidden.classList.contains('active')
+    ){
+        collectionhidden.classList.remove('active');
+        explorehidden.classList.remove('active')
+    }
 }
 
 const collection = document.querySelector('.collection');
 const collectionhidden= document.querySelector('.collection-hidden');
 collection.onclick = function(){
     collectionhidden.classList.toggle('active')
+
+    if(
+        shophidden.classList.contains('active') ||
+        explorehidden.classList.contains('active')
+    ){
+        shophidden.classList.remove('active');
+        explorehidden.classList.remove('active')
+    }
+    
 }
 
 const explorehidden = document.querySelector('.explore-hidden');
 const explore = document.querySelector('.explore');
 explore.onclick = function(){
-    explorehidden.classList.toggle('active')
+    explorehidden.classList.toggle('active');
+
+    if(
+        collectionhidden.classList.contains('active') ||
+        shophidden.classList.contains('active')
+    ){
+        collectionhidden.classList.remove('active');
+        shophidden.classList.remove('active');
+    }
 }
 
 
 const bug = document.querySelector('.bug');
 const leftbug = document.querySelector('.left-bug');
 bug.onclick = function(){
-    leftbug.classList.toggle('active')
+    leftbug.classList.toggle('active');
+    
 }
 
 const leftshop = document.querySelector('.left-shop');
