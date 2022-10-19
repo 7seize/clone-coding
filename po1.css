@@ -1594,12 +1594,29 @@ addpage */
 .product-page-top{
     display: flex;
 }
+.product-page-top >a{
+    font-family: "Montserrat",Arial,Sans-Serif;
+    color: #acaca2;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+}
+.product-page-top >a:hover{
+    color: #000;
+}
+.product-page-top > div{
+    font-family: "Montserrat",Arial,Sans-Serif;
+    color: #acaca2;
+    font-weight: 500;
+    font-size: 12px;
+}
 .product-main{
     display: flex;
     width: 100%;
 }
 .product-main-left{
     width: 50%;
+    padding: 0 1rem;
 }
 .product-main-img{
     width: 100%;
@@ -1627,13 +1644,14 @@ addpage */
 
 .product-main-right{
     width: 50%;
+    padding: 1rem;
 }
 .product-brendname > div{
     font-size: 16px;
     text-transform: uppercase;
     color: #a0a095;
     margin-bottom: 15px;
-    font-family: Montserrat,sans-serif;
+    font-family: "Montserrat",sans-serif;
     font-weight: 400;
 }
 .product-brendname > h2{
@@ -1649,7 +1667,7 @@ addpage */
     margin: 10px 0;
     color: #545633;
     font-size: 17px;
-    font-family: abolition-soft,Arial,sans-serif;
+    font-family: 'Antonio', sans-serif;
     font-weight: 400;
     font-style: normal;
     letter-spacing: .8px;
@@ -1686,7 +1704,7 @@ addpage */
 
 .product-price{
     line-height: 60px;
-    font-family: abolition-soft,Arial,sans-serif;
+    font-family: 'Antonio', sans-serif;
     font-size: 50px;
     color: #a0a095;
     
@@ -1708,6 +1726,7 @@ addpage */
 .product-sm-img >a{
     width: 25%;
     display: inline-block;
+    padding: 3%;
 }
 .product-sm-img >a img{
     width: 100%;
@@ -1719,7 +1738,7 @@ addpage */
     color: #a01515;
     font-size: 13px;
     line-height: 1.2;
-    font-family: Montserrat,sans-serif;
+    font-family: "Montserrat",sans-serif;
     font-weight: 500;
 }
 .product-add-cart{
@@ -1771,16 +1790,17 @@ addpage */
 }
 .porduct-process{
     width: 100%;
-    margin: 3rem 0;
+    margin: 1rem 0 2rem 0;
 }
 .porduct-process > ul{
     width: 100%;
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: center;
 }
 .porduct-process > ul > li{
-    width: 25%;
+    width: 20%;
 }
 .porduct-process > ul > li >p{
     font-family: "Montserrat",sans-serif;
@@ -1796,7 +1816,7 @@ addpage */
     color: #000;
 }
 .porduct-process > ul > li > div{
-    width: 35%;
+    width: 30%;
     height: 90px;
     margin: 0 auto;
     display: flex;
@@ -1814,7 +1834,7 @@ addpage */
     margin: -12px auto 15px;
     background-color: white;
     width: 40%;
-    font-family: abolition-soft,Arial,sans-serif;
+    font-family: 'Antonio', sans-serif;
     letter-spacing: .27px;
     font-size: 17px;
     font-weight: 400;
@@ -1838,7 +1858,7 @@ addpage */
 }
 .cname{
     font-size: 16px;
-    font-family: abolition-soft,Arial,sans-serif;
+    font-family: 'Antonio', sans-serif;
     color: #000;
     font-weight: 400;
 }
@@ -1858,7 +1878,7 @@ addpage */
     color: #a0a095;
     font-size: 50px;
     line-height: 60px;
-    font-family: abolition-soft,Arial,sans-serif;
+    font-family: 'Antonio', sans-serif;
     padding: 14px 0;
     font-weight: 400;
     letter-spacing: .02em;
@@ -1872,7 +1892,7 @@ addpage */
     font-family: "Montserrat",Arial,Sans-Serif;
 }
 .product-video{
-    margin: 3rem 0;
+    margin: 8rem 0 10rem 0;
     width: 100%;
     height: 60vh;
 }
@@ -1891,15 +1911,45 @@ addpage */
 .bot-product-related{
     margin: 0 auto;
     text-align: center;
+    border-top: 1px solid #1d1d1b;
 }
-.bot-product-related > div{
+.bot-product-related h3{
+    color: #a3a28b;
+    font-family: "Montserrat",sans-serif;
+    text-transform: uppercase;
+    background: #fff;
+    width: 50%;
+    margin: -14px auto 0;
+    max-width: 222px;
+}
+.bot-product-contain{
     display: flex;
     width: 100%;
+    padding: 0 3%;
     text-align: center;
     align-items: center;
     justify-content: space-between;
 }
-.bot-product-related > div> div{
+.bot-product-contain> div{
     width: 25%;
     text-align: center;
+}
+.bot-product-contain> div >p{
+    width: 100%;
+    padding: 10% 20%;
+}
+.bot-product-contain> div >p > img{
+    width: 100%;
+}
+.bot-product-contain> div> div:nth-child(2){
+    color: #a0a095;
+    font-weight: 600;
+    font-family: "Montserrat",sans-serif;
+}
+.bot-product-contain> div> div:nth-child(3){
+    font-family: 'Antonio', sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
 }
