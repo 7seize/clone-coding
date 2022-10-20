@@ -85,3 +85,69 @@ const brand = document.querySelectorAll('.brand');
 
 //mouseenter
 //mouseleave
+
+const proleftmove =document.querySelector('.product-left-move');
+const prorightmove =document.querySelector('.product-right-move');
+const prominiimg = document.querySelectorAll('.product-mini-img > a');
+const probigmig =document.querySelector('.product-main-img > p');
+
+let m = 2000;
+let n = 2200;
+prorightmove.addEventListener('click',function(){
+    m++;
+    n--;
+    prominiimg[0].style=`order:${m%5}`;
+    prominiimg[1].style=`order:${(m+1)%5}`;
+    prominiimg[2].style=`order:${(m+2)%5}`;
+    prominiimg[3].style=`order:${(m+3)%5}`;
+    prominiimg[4].style=`order:${(m+4)%5}`;
+    probigmig.innerHTML=`<img src="./img/product_page/big-${n%5+1}.jpg">`;
+});
+
+//append 로 사용해보기!
+proleftmove.addEventListener('click',function(){
+    m--;
+    n++;
+    prominiimg[0].style=`order:${m%5}`;
+    prominiimg[1].style=`order:${(m+1)%5}`;
+    prominiimg[2].style=`order:${(m+2)%5}`;
+    prominiimg[3].style=`order:${(m+3)%5}`;
+    prominiimg[4].style=`order:${(m+4)%5}`;
+    probigmig.innerHTML=`<img src="./img/product_page/big-${n%5+1}.jpg">`;
+});
+
+const procolor =document.querySelector(`.product-color`)
+const procolorim = document.querySelectorAll('.product-sm-img > a');
+
+procolorim[1].addEventListener('mouseenter',function(){
+    procolor.innerHTML = `COLOR: BLUE`;
+})
+procolorim[1].addEventListener('mouseleave',function(){
+    procolor.innerHTML = `COLOR: BLACK`;
+})
+procolorim[2].addEventListener('mouseenter',function(){
+    procolor.innerHTML = `COLOR: DESERT`;
+})
+procolorim[2].addEventListener('mouseleave',function(){
+    procolor.innerHTML = `COLOR: BLACK`;
+})
+procolorim[3].addEventListener('mouseenter',function(){
+    procolor.innerHTML = `COLOR: GREEN`;
+})
+procolorim[3].addEventListener('mouseleave',function(){
+    procolor.innerHTML = `COLOR: BLACK`;
+})
+procolorim[4].addEventListener('mouseenter',function(){
+    procolor.innerHTML = `COLOR: SIVER`;
+})
+procolorim[4].addEventListener('mouseleave',function(){
+    procolor.innerHTML = `COLOR: BLACK`;
+})
+
+const procountmi =  document.querySelector(`.product-count-minus`);
+const procountpu =  document.querySelector(`.product-count-plus`);
+const proadd =  document.querySelector(`.product-add`);
+
+// procountpu.addEventListener('click',function(){
+//     proadd.value =?;
+// });

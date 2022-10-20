@@ -1621,7 +1621,8 @@ addpage */
 .product-main-img{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    transition: 0.5s;
 }
 .product-main-img > p{
     width: 480px;
@@ -1635,11 +1636,24 @@ addpage */
 .product-left-move{
     width: 100px;
     height: 500px;
-    line-height: 300px;
+    line-height: 430px;
+    font-size: 8rem;
+    font-weight: 100;
+    color:  #e9e9de;
 } 
+.product-left-move:hover{
+    color: #acaca2;
+}
 .product-right-move{
     width: 100px;
     height: 500px;
+    line-height: 430px;
+    font-size: 8rem;
+    font-weight: 100;
+    color:  #e9e9de;
+}
+.product-right-move:hover{
+    color: #acaca2;
 }
 
 .product-main-right{
@@ -1722,12 +1736,30 @@ addpage */
     width: 70%;
     max-width: 450px;
     font-size: 0;
+    position: relative;
 }
 .product-sm-img >a{
-    width: 25%;
+    width: 20%;
     display: inline-block;
     padding: 3%;
+    position: relative;
+    border: 1px solid #c0bbbb;
+    margin: 5px;
 }
+.product-sm-img >a:nth-child(1){
+    border: 1.5px solid rgb(57, 55, 55);
+    
+}
+.product-sm-img >a:hover:after{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
 .product-sm-img >a img{
     width: 100%;
 }
@@ -1760,6 +1792,10 @@ addpage */
     cursor: pointer;
     font-weight: 700;
     font-family: "Montserrat",Arial,Sans-Serif;
+    border: white;
+}
+.product-btn > input:hover{
+    background-color: #676854;
 }
 .product-count{
     width: 35%;
@@ -1845,10 +1881,40 @@ addpage */
     justify-content:space-between;
     margin-top: 1.5rem;
     width: 100%;
+    
 }
 .related-product >div >div{
     width: 25%;
+    position: relative;
 }
+.related-product-low >div:nth-child(1):hover:after{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.related-product-low >div:nth-child(2):hover:after{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.related-product-low >div:nth-child(3):hover:after{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
 .bname{
     margin: 3px 0 7px 0;
     color: #a0a095;
@@ -1933,6 +1999,16 @@ addpage */
 .bot-product-contain> div{
     width: 25%;
     text-align: center;
+    position: relative;
+}
+.bot-product-contain> div:hover:after{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 .bot-product-contain> div >p{
     width: 100%;
