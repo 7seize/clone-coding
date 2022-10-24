@@ -116,6 +116,27 @@ proleftmove.addEventListener('click',function(){
     probigmig.innerHTML=`<img src="./img/product_page/big-${n%5+1}.jpg">`;
 });
 
+
+//클릭시 큰화면 
+
+// prominiimg[0].addEventListener('click',function(){
+//     probigmig.innerHTML= `<img src="./img/product_page/big-${1}.jpg">`
+// });
+// prominiimg[1].addEventListener('click',function(){
+//     probigmig.innerHTML= `<img src="./img/product_page/big-${2}.jpg">`
+// });
+// prominiimg[2].addEventListener('click',function(){
+//     probigmig.innerHTML= `<img src="./img/product_page/big-${3}.jpg">`
+// });
+// prominiimg[3].addEventListener('click',function(){
+//     probigmig.innerHTML= `<img src="./img/product_page/big-${4}.jpg">`
+// });
+// prominiimg[4].addEventListener('click',function(){
+//     probigmig.innerHTML= `<img src="./img/product_page/big-${5}.jpg">`
+// });
+
+
+
 const procolor =document.querySelector(`.product-color`)
 const procolorim = document.querySelectorAll('.product-sm-img > a');
 

@@ -667,8 +667,7 @@ main{
 
 .mid-top-img{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
     text-align: center;
     justify-content: space-evenly;
@@ -676,6 +675,7 @@ main{
 
 .mid-top-img a{
     width: 20%;
+    overflow: hidden;
 }
 
 @media (max-width: 768px){.mid-top-img a{
@@ -686,7 +686,7 @@ main{
 }}
 
 .mid-top-img a p{
-    
+    width: 100%;
 }
 .mid-top-img a p img{
     width: 100%;
