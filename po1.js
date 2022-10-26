@@ -89,70 +89,84 @@ const brand = document.querySelectorAll('.brand');
 const proleftmove =document.querySelector('.product-left-move');
 const prorightmove =document.querySelector('.product-right-move');
 const prominiimg = document.querySelectorAll('.product-mini-img > a');
-const probigmig =document.querySelectorAll('.product-main-img-contain >figure');
-
-// let m = 2000;
-// let n = 2200;
-// prorightmove.addEventListener('click',function(){
-//     m++;
-//     n--;
-//     prominiimg[0].style=`order:${m%5}`;
-//     prominiimg[1].style=`order:${(m+1)%5}`;
-//     prominiimg[2].style=`order:${(m+2)%5}`;
-//     prominiimg[3].style=`order:${(m+3)%5}`;
-//     prominiimg[4].style=`order:${(m+4)%5}`;
-//     probigmig.innerHTML=`<img src="./img/product_page/big-${n%5+1}.jpg">`;
-// });
-
-// //append 로 사용해보기!
-// proleftmove.addEventListener('click',function(){
-//     m--;
-//     n++;
-//     prominiimg[0].style=`order:${m%5}`;
-//     prominiimg[1].style=`order:${(m+1)%5}`;
-//     prominiimg[2].style=`order:${(m+2)%5}`;
-//     prominiimg[3].style=`order:${(m+3)%5}`;
-//     prominiimg[4].style=`order:${(m+4)%5}`;
-//     probigmig.innerHTML=`<img src="./img/product_page/big-${n%5+1}.jpg">`;
-// });
+const probigmig =document.querySelector('.product-main-img-contain');
+const profigure =document.querySelectorAll('.product-main-img-contain > figure');
 
 
-probigmig.forEach((el,key)=>{
-    setTimeout(
+
+
+
+//제품 버튼누르면 움직임
+let movearr = function(){
+    let evnetnum = 1;
+    probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+    
+    //제품 무한으로 돌리기,cloneNode(true)는 자식요소도 추가
+    let Fclone =profigure[0].cloneNode(true);
+    probigmig.append(Fclone);
+    let Lclone =profigure[4].cloneNode(true);
+    probigmig.prepend(Lclone);
+    FLclone = function(){
+            if(evnetnum == 6){
+                evnetnum = 1;
+                setTimeout(()=>{
+                    probigmig.style =`transition:0s;transform: translateX(-${100*evnetnum}%);`
+                },100)
+                
+            }else if(evnetnum == 0){
+                evnetnum = 4;
+            };
+    }
+    //앞으로 
     prorightmove.addEventListener('click',function(){
-    el.style =`transform: translateX(-${100*key}%);`
-    }),500)
-});
-//############오류부분 다시하자
-probigmig.forEach((el,key)=>{
+        evnetnum++
+        setTimeout(()=>{
+            probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+        },100)
+        FLclone();
+    });
+    //뒤로
     proleftmove.addEventListener('click',function(){
-    el.style =`transform: translateX(${100*key}%);`
-    })
-});
+        evnetnum--
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+        FLclone();
+    });
 
-//클릭시 큰화면 
-//왜작동안하는지?###########
-prominiimg[0].addEventListener('click',function(){
-    event.preventDefault();
-    //화면 리로드되는 것을 막는다.
-    probigmig.innerHTML= `<img src="./img/product_page/big-${1}.jpg">`
-});
-prominiimg[1].addEventListener('click',function(){
-    event.preventDefault();
-    probigmig.innerHTML= `<img src="./img/product_page/big-${2}.jpg">`
-});
-prominiimg[2].addEventListener('click',function(){
-    event.preventDefault();
-    probigmig.innerHTML= `<img src="./img/product_page/big-${3}.jpg">`
-});
-prominiimg[3].addEventListener('click',function(){
-    event.preventDefault();
-    probigmig.innerHTML= `<img src="./img/product_page/big-${4}.jpg">`
-});
-prominiimg[4].addEventListener('click',function(){
-    event.preventDefault();
-    probigmig.innerHTML= `<img src="./img/product_page/big-${5}.jpg">`
-});
+    
+
+    //제품 아래 작은 이미지 클릭시 큰화면 
+    prominiimg[0].addEventListener('click',function(){
+        event.preventDefault();
+        //화면 리로드되는 것을 막는다.
+        evnetnum = 1;
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+    });
+    prominiimg[1].addEventListener('click',function(){
+        event.preventDefault();
+        evnetnum = 2;
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+    });
+    prominiimg[2].addEventListener('click',function(){
+        event.preventDefault();
+        evnetnum = 3;
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+    });prominiimg[3].addEventListener('click',function(){
+        event.preventDefault();
+        evnetnum = 4;
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+    });prominiimg[4].addEventListener('click',function(){
+        event.preventDefault();
+        evnetnum = 5;
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+    });
+
+
+}
+movearr();
+//제품-제품 미니 화면 움직이는
+
+
+
 
 
 
