@@ -181,13 +181,9 @@ let movearr = function(){
 movearr();
 //제품과 제품 미니 화면 움직이는 명령어
 
-
-
-
-
-
 const procolor =document.querySelector(`.product-color`)
 const procolorim = document.querySelectorAll('.product-sm-img > a');
+
 
 procolorim[1].addEventListener('mouseenter',function(){
     procolor.innerHTML = `COLOR: BLUE`;

@@ -667,6 +667,7 @@ main{
 
 .mid-top-img{
     display: flex;
+    
     flex-wrap: nowrap;
     width: 100%;
     text-align: center;
@@ -674,6 +675,7 @@ main{
 }
 
 .mid-top-img a{
+    flex-shrink: 0;
     width: 20%;
     overflow: hidden;
 }
