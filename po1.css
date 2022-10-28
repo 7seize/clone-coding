@@ -1834,12 +1834,7 @@ addpage */
     font-weight: 500;
     cursor: pointer;
 }
-.product-count > div{
-    height: 100%;
-    text-align: center;
-}
-.product-count > div > input{
-    width: 100%;
+.product-count > input{
     height: 100%;
     text-align: center;
     border: 1px solid #c3c3c3;

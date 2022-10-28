@@ -98,53 +98,38 @@ const profigure =document.querySelectorAll('.product-main-img-contain > figure')
 
 //제품 버튼누르면 움직임
 let movearr = function(){
-
-    //버튼 누르기전 초기 화면
     let evnetnum = 1;
     probigmig.style =`transform: translateX(-${100*evnetnum}%);`
     
-
     //제품 무한으로 돌리기,cloneNode(true)는 자식요소도 추가
-
-    //제품 마지막에 첫번쨰 그림 추가
     let Fclone =profigure[0].cloneNode(true);
     probigmig.append(Fclone);
-
-    //제품 처음에 마지막 그림 추가
     let Lclone =profigure[4].cloneNode(true);
     probigmig.prepend(Lclone);
-
-    //끝까지 가면 처음으로 돌아오게 하기
     FLclone = function(){
-        setTimeout(()=>{
-            if(evnetnum >= 6){
+            if(evnetnum == 6){
                 evnetnum = 1;
+                setTimeout(()=>{
                     probigmig.style =`transition:0s;transform: translateX(-${100*evnetnum}%);`
-            }else if(evnetnum <= 0){
-                evnetnum = 5;
-                probigmig.style =`transition:0s;transform: translateX(-${100*evnetnum}%);`
+                },100)
+                
+            }else if(evnetnum == 0){
+                evnetnum = 4;
             };
-        },550)
-    
     }
-
-
     //앞으로 
     prorightmove.addEventListener('click',function(){
+        evnetnum++
         setTimeout(()=>{
-            evnetnum++
             probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-            FLclone();
-        },300)
+        },100)
+        FLclone();
     });
-
     //뒤로
     proleftmove.addEventListener('click',function(){
-        setTimeout(()=>{
-            evnetnum--
-            probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-            FLclone();
-        },300)
+        evnetnum--
+        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+        FLclone();
     });
 
     
@@ -177,9 +162,8 @@ let movearr = function(){
 
 
 }
-
 movearr();
-//제품과 제품 미니 화면 움직이는 명령어
+//제품-제품 미니 화면 움직이는
 
 const procolor =document.querySelector(`.product-color`)
 const procolorim = document.querySelectorAll('.product-sm-img > a');
@@ -210,34 +194,10 @@ procolorim[4].addEventListener('mouseleave',function(){
     procolor.innerHTML = `COLOR: BLACK`;
 })
 
-
-//제품 add the cart
 const procountmi =  document.querySelector(`.product-count-minus`);
 const procountpu =  document.querySelector(`.product-count-plus`);
 const proadd =  document.querySelector(`.product-add`);
 
-function addcart(){
-    let procount = 1;
-    let productMax = 4;
-
-    procountpu.addEventListener('click',()=>{
-        procount++;
-    if(procount > productMax){
-        procount = productMax;
-        alert("최대 수량을 초과 했습니다.")
-    }
-    proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
-    });
-    procountmi.addEventListener('click',()=>{
-        procount--;
-    if(procount < 1){
-        alert("최소 수량 입니다")
-        procount = 1;
-    }
-    proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
-    });
-
-    
-};
-addcart();
-
+// procountpu.addEventListener('click',function(){
+//     proadd.value =?;
+// });
