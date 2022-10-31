@@ -78,126 +78,48 @@ $(window).on('mousewheel',function(e){
         topsidebar.style.display = 'none';
     }
 });
+//가운데 버튼
+const prebtn = document.querySelector('.mid-pre')
+const nextbtn = document.querySelector('.mid-next')
+const midimg = document.querySelector('.mid-top-img')
+const midimga = document.querySelectorAll('.mid-top-img > a')
+let midimgcount = 5;
 
-const subselect = document.querySelectorAll('.sub-select');
-const pu = document.querySelectorAll('.pu');
-const brand = document.querySelectorAll('.brand');
+midimg.style =`transform: translateX(-100%)`
 
-//mouseenter
-//mouseleave
+midimg.prepend(midimga[8].cloneNode(true));
+midimg.prepend(midimga[7].cloneNode(true));
+midimg.prepend(midimga[6].cloneNode(true));
+midimg.prepend(midimga[5].cloneNode(true));
+midimg.prepend(midimga[4].cloneNode(true));
 
-const proleftmove =document.querySelector('.product-left-move');
-const prorightmove =document.querySelector('.product-right-move');
-const prominiimg = document.querySelectorAll('.product-mini-img > a');
-const probigmig =document.querySelector('.product-main-img-contain');
-const profigure =document.querySelectorAll('.product-main-img-contain > figure');
-
-
-
-
-
-//제품 버튼누르면 움직임
-let movearr = function(){
-    let evnetnum = 1;
-    probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    
-    //제품 무한으로 돌리기,cloneNode(true)는 자식요소도 추가
-    let Fclone =profigure[0].cloneNode(true);
-    probigmig.append(Fclone);
-    let Lclone =profigure[4].cloneNode(true);
-    probigmig.prepend(Lclone);
-    FLclone = function(){
-            if(evnetnum == 6){
-                evnetnum = 1;
-                setTimeout(()=>{
-                    probigmig.style =`transition:0s;transform: translateX(-${100*evnetnum}%);`
-                },100)
-                
-            }else if(evnetnum == 0){
-                evnetnum = 4;
-            };
-    }
-    //앞으로 
-    prorightmove.addEventListener('click',function(){
-        evnetnum++
-        setTimeout(()=>{
-            probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-        },100)
-        FLclone();
-    });
-    //뒤로
-    proleftmove.addEventListener('click',function(){
-        evnetnum--
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-        FLclone();
-    });
-
-    
-
-    //제품 아래 작은 이미지 클릭시 큰화면 
-    prominiimg[0].addEventListener('click',function(){
-        event.preventDefault();
-        //화면 리로드되는 것을 막는다.
-        evnetnum = 1;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });
-    prominiimg[1].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 2;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });
-    prominiimg[2].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 3;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });prominiimg[3].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 4;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });prominiimg[4].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 5;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });
+midimg.append(midimga[0].cloneNode(true));
+midimg.append(midimga[1].cloneNode(true));
+midimg.append(midimga[2].cloneNode(true));
+midimg.append(midimga[3].cloneNode(true));
+midimg.append(midimga[4].cloneNode(true));
+midimg.append(midimga[5].cloneNode(true));
 
 
-}
-movearr();
-//제품-제품 미니 화면 움직이는
-
-const procolor =document.querySelector(`.product-color`)
-const procolorim = document.querySelectorAll('.product-sm-img > a');
-
-
-procolorim[1].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: BLUE`;
-})
-procolorim[1].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
-})
-procolorim[2].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: DESERT`;
-})
-procolorim[2].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
-})
-procolorim[3].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: GREEN`;
-})
-procolorim[3].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
-})
-procolorim[4].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: SIVER`;
-})
-procolorim[4].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
+nextbtn.addEventListener('click',()=>{
+    midimgcount++;
+    midimg.style =`transform: translateX(-${midimgcount*20}%);`
+    setTimeout(()=>{
+        if(midimgcount >= 14){
+            midimgcount =5;
+            midimg.style =`transition: 0s;transform: translateX(-${midimgcount*20}%);`
+        }
+    },600)
 })
 
-const procountmi =  document.querySelector(`.product-count-minus`);
-const procountpu =  document.querySelector(`.product-count-plus`);
-const proadd =  document.querySelector(`.product-add`);
-
-// procountpu.addEventListener('click',function(){
-//     proadd.value =?;
-// });
+prebtn.addEventListener('click',()=>{
+    midimgcount--;
+    midimg.style =`transform: translateX(-${midimgcount*20}%);`
+    console.log(midimgcount)
+    setTimeout(()=>{
+        if(midimgcount <= 0){
+            midimgcount =10;
+            midimg.style =`transition: 0s;transform: translateX(-${midimgcount*20}%);`
+        }
+    },600)
+})
