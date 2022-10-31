@@ -50,11 +50,7 @@ bug.onclick = function(){
     
 }
 
-// const leftshop = document.querySelector('.left-shop');
-// const leftshopnav= document.querySelector('.left-shop-nav');
-// leftshop.onclick = function(){
-//     leftshopnav.classList.toggle('active')
-// }
+//left bug===============================================================
 $('.bug').on('click',function(){
     $('.left-nav-con li> nav> a').slideUp();
 });
@@ -71,6 +67,12 @@ let num=0;
             num = idx;
 
         });
+//===========================================================================
+// const leftshop = document.querySelector('.left-shop');
+// const leftshopnav= document.querySelector('.left-shop-nav');
+// leftshop.onclick = function(){
+//     leftshopnav.classList.toggle('active')
+// }
 
 // const leftcollection = document.querySelector('.left-collection');
 // const leftcollectionnav= document.querySelector('.left-collection-nav');
