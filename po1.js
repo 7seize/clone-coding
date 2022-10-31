@@ -78,48 +78,70 @@ $(window).on('mousewheel',function(e){
         topsidebar.style.display = 'none';
     }
 });
-//가운데 버튼
+
+
+
+//가운데 버튼=============================================================
 const prebtn = document.querySelector('.mid-pre')
 const nextbtn = document.querySelector('.mid-next')
 const midimg = document.querySelector('.mid-top-img')
 const midimga = document.querySelectorAll('.mid-top-img > a')
-let midimgcount = 5;
 
-midimg.style =`transform: translateX(-100%)`
+let midarrow = function(){
+    let midimgcount = 5;
 
-midimg.prepend(midimga[8].cloneNode(true));
-midimg.prepend(midimga[7].cloneNode(true));
-midimg.prepend(midimga[6].cloneNode(true));
-midimg.prepend(midimga[5].cloneNode(true));
-midimg.prepend(midimga[4].cloneNode(true));
+    midimg.style =`transform: translateX(-100%)`
 
-midimg.append(midimga[0].cloneNode(true));
-midimg.append(midimga[1].cloneNode(true));
-midimg.append(midimga[2].cloneNode(true));
-midimg.append(midimga[3].cloneNode(true));
-midimg.append(midimga[4].cloneNode(true));
-midimg.append(midimga[5].cloneNode(true));
+    midimg.prepend(midimga[8].cloneNode(true));
+    midimg.prepend(midimga[7].cloneNode(true));
+    midimg.prepend(midimga[6].cloneNode(true));
+    midimg.prepend(midimga[5].cloneNode(true));
+    midimg.prepend(midimga[4].cloneNode(true));
 
+    midimg.append(midimga[0].cloneNode(true));
+    midimg.append(midimga[1].cloneNode(true));
+    midimg.append(midimga[2].cloneNode(true));
+    midimg.append(midimga[3].cloneNode(true));
+    midimg.append(midimga[4].cloneNode(true));
+    midimg.append(midimga[5].cloneNode(true));
 
-nextbtn.addEventListener('click',()=>{
-    midimgcount++;
-    midimg.style =`transform: translateX(-${midimgcount*20}%);`
-    setTimeout(()=>{
-        if(midimgcount >= 14){
-            midimgcount =5;
-            midimg.style =`transition: 0s;transform: translateX(-${midimgcount*20}%);`
-        }
-    },600)
+    let inter;
+    nextbtn.addEventListener('click',()=>{
+            clearTimeout(inter)
+            inter = setTimeout(()=>{            
+                midimgcount++;   
+                console.log(midimgcount)
+                midimg.style =`transform: translateX(-${midimgcount*20}%);`
+            },200)     
+            
+            setTimeout(()=>{
+                if(midimgcount >= 14){
+                    midimgcount =5;
+                    midimg.style =`transition: 0s;transform: translateX(-${midimgcount*20}%);`
+                }
+            },600)
+        
+    })
+
+    prebtn.addEventListener('click',()=>{
+        midimgcount--;
+        midimg.style =`transform: translateX(-${midimgcount*20}%);`
+        console.log(midimgcount)
+        setTimeout(()=>{
+            if(midimgcount <= 0){
+                midimgcount =10;
+                midimg.style =`transition: 0s;transform: translateX(-${midimgcount*20}%);`
+            }
+        },600)
+    })
+}
+midarrow();
+
+let media = window.matchMedia('(min-width:768px)');
+media.addListener(function(){
+    if(media.matches){
+        midarrow();
+    }
 })
 
-prebtn.addEventListener('click',()=>{
-    midimgcount--;
-    midimg.style =`transform: translateX(-${midimgcount*20}%);`
-    console.log(midimgcount)
-    setTimeout(()=>{
-        if(midimgcount <= 0){
-            midimgcount =10;
-            midimg.style =`transition: 0s;transform: translateX(-${midimgcount*20}%);`
-        }
-    },600)
-})
+

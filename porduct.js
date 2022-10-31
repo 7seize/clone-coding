@@ -159,5 +159,10 @@ function addcart(){
 
     
 };
-addcart();
+
+let media = window.matchMedia('(max-width:768px)');
+console.log(media)
+if(media){
+    addcart()
+}
 
