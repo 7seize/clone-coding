@@ -1,5 +1,6 @@
 const shophidden = document.querySelector('.shop-hidden');
 const shop = document.querySelector('.shop');
+
 shop.onclick = function(){
     shophidden.classList.toggle('active');
 
