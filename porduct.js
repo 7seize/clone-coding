@@ -141,6 +141,7 @@ function addcart(){
     let productMax = 4;
 
     procountpu.addEventListener('click',()=>{
+        console.log('test')
         procount++;
     if(procount > productMax){
         procount = productMax;
@@ -156,7 +157,7 @@ function addcart(){
     }
     proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
     });
-
-    
 };
 
+/*cart count*/ 
+addcart();
