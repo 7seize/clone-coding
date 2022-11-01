@@ -135,13 +135,13 @@ procolorim[4].addEventListener('mouseleave',function(){
 const procountmi =  document.querySelector(`.product-count-minus`);
 const procountpu =  document.querySelector(`.product-count-plus`);
 const proadd =  document.querySelector(`.product-add`);
-
+let procount = 1;
+let innerWidth = window.innerWidth;
 function addcart(){
-    let procount = 1;
+    procount = 1;
     let productMax = 4;
 
     procountpu.addEventListener('click',()=>{
-        console.log('test')
         procount++;
     if(procount > productMax){
         procount = productMax;
@@ -161,3 +161,21 @@ function addcart(){
 
 /*cart count*/ 
 addcart();
+
+//캐쉬저장
+
+const probtn =  document.querySelector('.product-btn');
+const bag = document.querySelector('.bag > span');
+
+probtn.addEventListener('click',()=>{
+    event.preventDefault();
+    localStorage.setItem('cashpro',procount)
+});
+
+window.onresize = function(event){
+
+if(innerWidth <= "992"){
+    procount = 1;
+    proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
+};
+}

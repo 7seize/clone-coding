@@ -67,24 +67,6 @@ let num=0;
             num = idx;
 
         });
-//===========================================================================
-// const leftshop = document.querySelector('.left-shop');
-// const leftshopnav= document.querySelector('.left-shop-nav');
-// leftshop.onclick = function(){
-//     leftshopnav.classList.toggle('active')
-// }
-
-// const leftcollection = document.querySelector('.left-collection');
-// const leftcollectionnav= document.querySelector('.left-collection-nav');
-// leftcollection.onclick = function(){
-//     leftcollectionnav.classList.toggle('active')
-// }
-
-// const leftexplore = document.querySelector('.left-explore');
-// const leftexplorenav= document.querySelector('.left-explore-nav');
-// leftexplore.onclick = function(){
-//     leftexplorenav.classList.toggle('active')
-// }
 
 const topsidebar = document.querySelector('.top-sidebar')
 $(window).on('mousewheel',function(e){
@@ -98,33 +80,4 @@ $(window).on('mousewheel',function(e){
     }
 });
 
-
-
-// //가운데 버튼=============================================================
-const prebtn = document.querySelector('.mid-pre')
-const nextbtn = document.querySelector('.mid-next')
-const midimg = document.querySelector('.mid-top-img')
-const midimga = document.querySelectorAll('.mid-top-img > a')
-
-let midarrow = function(){
-    let midimgcount = 0;
-
-    nextbtn.addEventListener('click',()=>{
-        if (midimgcount < 4){
-            midimgcount++;  
-            midimg.style =`transform: translateX(${40-midimgcount*20}%);`
-        }    
-    })
-
-    prebtn.addEventListener('click',()=>{
-        if (midimgcount >0){
-            midimgcount--;
-            midimg.style =`transform: translateX(${40-midimgcount*20}%);`
-        }
-    })
-}
-midarrow();
-
-
-//==========================================product
 

@@ -678,7 +678,6 @@ main{
     transform: translateY(-120%);
     text-align: end;
     padding: 0 10px;
-    display: none;
 }
 .mid-top-btn button{
     border: none;
@@ -701,19 +700,22 @@ main{
     justify-content: center;
     transition: 0.5s;
 }
-@media (max-width: 768px){.mid-top-img a{
-
+@media (min-width: 768px){.mid-top-img{
     flex-wrap: nowrap;
+    transform: translateX(40%)
 }}
 
 .mid-top-img a{
     width: 20%;
     margin-top: 2rem;
     /* flex-shrink: 0;
-    overflow: hidden; */
-
+    overflow: hidden;#### */
 }
 
+@media (min-width: 768px){.mid-top-img a{
+    flex-shrink: 0;
+    overflow: hidden;
+}}
 @media (max-width: 768px){.mid-top-img a{
     width: 30vw;
     overflow: visible;
