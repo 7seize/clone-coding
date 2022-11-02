@@ -3,18 +3,11 @@ const subselect = document.querySelectorAll('.sub-select');
 const pu = document.querySelectorAll('.pu');
 const brand = document.querySelectorAll('.brand');
 
-//mouseenter
-//mouseleave
-
 const proleftmove =document.querySelector('.product-left-move');
 const prorightmove =document.querySelector('.product-right-move');
 const prominiimg = document.querySelectorAll('.product-mini-img > a');
 const probigmig =document.querySelector('.product-main-img-contain');
 const profigure =document.querySelectorAll('.product-main-img-contain > figure');
-
-
-
-
 
 //제품 버튼누르면 움직임
 let movearr = function(){
@@ -48,8 +41,7 @@ let movearr = function(){
     
     }
 
-
-    //앞으로 
+    //앞으로 클릭
     prorightmove.addEventListener('click',function(){
         setTimeout(()=>{
             evnetnum++
@@ -58,7 +50,7 @@ let movearr = function(){
         },300)
     });
 
-    //뒤로
+    //뒤로 클릭
     proleftmove.addEventListener('click',function(){
         setTimeout(()=>{
             evnetnum--
@@ -67,67 +59,30 @@ let movearr = function(){
         },300)
     });
 
-    
-
-    //제품 아래 작은 이미지 클릭시 큰화면 
-    prominiimg[0].addEventListener('click',function(){
-        event.preventDefault();
-        //화면 리로드되는 것을 막는다.
-        evnetnum = 1;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });
-    prominiimg[1].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 2;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });
-    prominiimg[2].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 3;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });prominiimg[3].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 4;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });prominiimg[4].addEventListener('click',function(){
-        event.preventDefault();
-        evnetnum = 5;
-        probigmig.style =`transform: translateX(-${100*evnetnum}%);`
-    });
-
-
+//제품 아래 작은 이미지 클릭시 큰화면 
+    prominiimg.forEach((ele,key)=>{
+        ele.addEventListener('click',function(){
+                event.preventDefault();
+                evnetnum = key;
+                probigmig.style =`transform: translateX(-${100*evnetnum}%);`
+            });
+    })
 }
 
-movearr();
 //제품과 제품 미니 화면 움직이는 명령어
+movearr();
 
-const procolor =document.querySelector(`.product-color`)
+const procolor =document.querySelector(`.product-color`);
 const procolorim = document.querySelectorAll('.product-sm-img > a');
+const innercolor =[`COLOR: BLACK`,`COLOR: BLUE`,`COLOR: DESERT`,`COLOR: GREEN`,`COLOR: SIVER`];
 
-
-procolorim[1].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: BLUE`;
-})
-procolorim[1].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
-})
-procolorim[2].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: DESERT`;
-})
-procolorim[2].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
-})
-procolorim[3].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: GREEN`;
-})
-procolorim[3].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
-})
-procolorim[4].addEventListener('mouseenter',function(){
-    procolor.innerHTML = `COLOR: SIVER`;
-})
-procolorim[4].addEventListener('mouseleave',function(){
-    procolor.innerHTML = `COLOR: BLACK`;
+procolorim.forEach((ele,key)=>{
+    ele.addEventListener('mouseenter',function(){
+    procolor.innerHTML = innercolor[key];
+    })
+    ele.addEventListener('mouseleave',function(){
+        procolor.innerHTML = innercolor[0];
+    })
 })
 
 
@@ -137,6 +92,7 @@ const procountpu =  document.querySelector(`.product-count-plus`);
 const proadd =  document.querySelector(`.product-add`);
 let procount = 1;
 let innerWidth = window.innerWidth;
+
 function addcart(){
     procount = 1;
     let productMax = 4;
