@@ -479,8 +479,9 @@ main{
     width: 100%;
     position: fixed;
     left: 0;
-    top: 10rem;
-    z-index: 4;
+    top: 0;
+    padding-top: 11rem;
+    z-index: 2;
     overflow: scroll;
     background-color: white;
     transition: 0.5s;
@@ -719,10 +720,19 @@ main{
 .mid-top-img a{
     width: 20%;
     margin-top: 2rem;
-    /* flex-shrink: 0;
-    overflow: hidden;#### */
+    position: relative;
 }
+/* ### */
+.mid-top-img a:hover::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;top: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.4);
 
+}
 @media (min-width: 768px){.mid-top-img a{
     flex-shrink: 0;
     overflow: hidden;
@@ -1017,6 +1027,7 @@ main{
     width: 10rem;
     height: 3rem;
     font-weight: 800;
+    cursor: pointer;
 }
 
 @media (max-width: 1290px){.mid-bot > a div button{
@@ -1357,7 +1368,6 @@ aside p:nth-child(2){
 }}
 .pu{
     width: 100%;
-    height: 270px;
     color: #a0a095;
     display: inline-block;
     position: relative;
@@ -2133,5 +2143,88 @@ addpage */
 }
 @media (max-width: 768px){.bot-product-contain> div> div:nth-child(3){
     font-size: 16px;
+}}
+
+/*==========================================================================
+pop-up======================================================================*/
+
+.popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 15;
+    background: rgba(0,0,0,.7);
+    display: none;
 }
+
+.popup-contain{
+    width: 100%;
+    position: relative;
+    top: 10%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 35px 15px;
+    background: #a0a095;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.closer{
+    width: 95%;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+.closer img{
+    width: 20px;
+    cursor: pointer;
+}
+
+.pop-icon{
+    
+}
+
+.popup-contain > p{
+    font-size: 19px;
+    line-height: 26px;
+    font-weight: 500;
+    max-width: 380px;
+    margin: 19px auto 23px;
+    color: #fff;
+}
+
+.pop10{
+    width: 197px;
+    margin: 0 auto 2rem;
+}
+
+.popemail{
+    display: block;
+    background: none;
+    border: 1px solid #fff;
+    padding: 20px 15px;
+    text-align: center;
+    color: #fff;
+
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-family: "Montserrat",Arial,Sans-Serif;
+    width: 335px;
+}
+.popemail::placeholder{
+    color: white;
+}
+.popsubmit{
+    display: block;
+    background: white;
+    border: 1px solid #fff;
+    padding: 20px 15px;
+    text-align: center;
+    color: #1d1d1b;
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-family: "Montserrat",Arial,Sans-Serif;
+    width: 100%;
 }

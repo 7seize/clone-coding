@@ -49,6 +49,7 @@ const leftbug = document.querySelector('.left-bug');
 
 bug.onclick = ()=>{
     leftbug.classList.toggle('active');
+    topcontain.classList.toggle('active');
 }
 
 //left-bug-nav
@@ -57,7 +58,7 @@ $('.bug').on('click',()=>{
 });
 let num=0;
 
-        $('.left-nav-con>li').on('click',()=>{
+        $('.left-nav-con>li').on('click',function(){
 
             let idx = $(this).index();
 
@@ -112,3 +113,23 @@ let midarrow = function(){
 midarrow();
 
 
+//popup
+const popup = document.querySelector('.popup');
+const popupimg = document.querySelector('.popup-contain');
+const closer = document.querySelector('.closer img');
+
+setTimeout(() => {
+    popup.style = 'display: block;'
+}, 2000);
+
+closer.addEventListener('click',()=>{
+        popup.style = 'display: none;'
+})
+
+popup.addEventListener('click',()=>{
+
+    if(event.target.className=='popup'){
+        
+        popup.style = 'display: none;'
+    }
+})
