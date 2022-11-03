@@ -49,6 +49,7 @@ const leftbug = document.querySelector('.left-bug');
 
 bug.onclick = ()=>{
     leftbug.classList.toggle('active');
+    topcontain.classList.toggle('active');
 }
 
 //left-bug-nav
@@ -57,7 +58,7 @@ $('.bug').on('click',()=>{
 });
 let num=0;
 
-        $('.left-nav-con>li').on('click',()=>{
+        $('.left-nav-con>li').on('click',function(){
 
             let idx = $(this).index();
 
