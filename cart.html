@@ -28,6 +28,7 @@
     crossorigin="anonymous">
     </script>
     <script type="text/javascript" defer src="./sub.js"></script>
+    <script type="text/javascript" defer src="./cart.js"></script>
 </head>
 <body>
     <header>
@@ -231,8 +232,34 @@
                 <h2>CART</h2>
             </div>
             <div><a href="./suball.html">BACK TO SHOP</a></div>
-            <div>THERE ARE NO PRODUCTS IN YOUR CART</div>
-            <button><a href="./suball.html">BROWSE PRODUCTS</a></button>
+            <div class="cart-ti">THERE ARE NO PRODUCTS IN YOUR CART</div>
+            <div class="cart-ti-con">
+                <div class="cart-ti-count">
+                    <div>PRICE</div>
+                    <div>QTY</div>
+                    <div>TOTAL</div>
+                </div>
+            </div>
+            <div class="cart-pro">
+                <div>
+                    <div class="cart-closer"><img src="./img/cart/close_icon_v2.svg" alt=""></div>
+                    <div class="cart-img"><img src="./img/cart/THE_RIDGE_ALUMINUM_WALLET_MONEY_CLIP_BLACK_1_76fe67df-d3c6-4ce8-8423-32a05a525098_compact.jpg" alt=""></div>
+                    <div class="cart-name">ALUMINUM WALLET + MONEY CLIP<br>-black</div>
+                </div>
+                <div>
+                    <div class="cart-price">$95.00</div>
+                    <div class="cart-qty"><!-- 1--></div> 
+                    <div class="cart-total"><!-- $95.00--></div>
+                </div>
+            </div>
+            <div class="cart-all-total">
+                <div>
+                    <div>TOTAL</div>
+                    <div class="fin-total"><!-- $95.00--></div>
+                </div>
+            </div>
+            <button class="nocheckout"><a href="./suball.html">BROWSE PRODUCTS</a></button>
+            <button class="checkout"><a >CHECKOUT</a></button>
         </div>
     </main>
     <footer>

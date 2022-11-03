@@ -137,9 +137,7 @@ popup.addEventListener('click',()=>{
 
 let topbtn = document.querySelector(".top-btn");
 
-window.onscroll = function() {scrollFunction()};
-
-function topFunction() {
+function gotop() {
   document.body.scrollTop = 0; // 모바일
   document.documentElement.scrollTop = 0; // 웹
 }

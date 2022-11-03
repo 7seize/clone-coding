@@ -108,7 +108,7 @@ function addcart(){
     procountmi.addEventListener('click',()=>{
         procount--;
     if(procount < 1){
-        alert("최소 수량 입니다")
+        alert("최소 수량 입니다.")
         procount = 1;
     }
     proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
@@ -125,7 +125,7 @@ const bag = document.querySelector('.bag > span');
 
 probtn.addEventListener('click',()=>{
     event.preventDefault();
-    localStorage.setItem('cashpro',procount)
+    sessionStorage.setItem('cashpro',procount)
 });
 
 window.onresize = function(event){
