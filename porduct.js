@@ -128,10 +128,3 @@ probtn.addEventListener('click',()=>{
     sessionStorage.setItem('cashpro',procount)
 });
 
-window.onresize = function(event){
-
-if(innerWidth <= "992"){
-    procount = 1;
-    proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
-};
-}
