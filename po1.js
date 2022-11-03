@@ -99,14 +99,14 @@ let midarrow = function(){
     nextbtn.addEventListener('click',()=>{
         if (midimgcount < 4){
             midimgcount++;  
-            midimg.style =`transform: translateX(${40-midimgcount*20}%);`
+            midimg.style =`transform: translateX(-${midimgcount*20}%);`
         }    
     })
 
     prebtn.addEventListener('click',()=>{
         if (midimgcount >0){
             midimgcount--;
-            midimg.style =`transform: translateX(${40-midimgcount*20}%);`
+            midimg.style =`transform: translateX(-${midimgcount*20}%);`
         }
     })
 }
@@ -133,3 +133,13 @@ popup.addEventListener('click',()=>{
         popup.style = 'display: none;'
     }
 })
+
+
+let topbtn = document.querySelector(".top-btn");
+
+window.onscroll = function() {scrollFunction()};
+
+function topFunction() {
+  document.body.scrollTop = 0; // 모바일
+  document.documentElement.scrollTop = 0; // 웹
+}

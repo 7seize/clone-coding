@@ -677,7 +677,9 @@ main{
 @media (max-width: 768px){.mid-top div:nth-child(1) a{
     display: none;
 }}
-
+.add-mid{
+    
+}
 .mid-top div:nth-child(1) a{
     background-color: white;
     padding: 15px 60px;
@@ -705,16 +707,15 @@ main{
 
 .mid-top-img{
     display: flex;
-    flex-wrap: wrap;
     /* flex-wrap: nowrap; */
     width: 100%;
+    
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
     transition: 0.5s;
 }
 @media (min-width: 768px){.mid-top-img{
     flex-wrap: nowrap;
-    transform: translateX(40%)
 }}
 
 .mid-top-img a{
@@ -1120,6 +1121,26 @@ main{
 .mid-bot-bot div:nth-child(2) ul li a img{
     width: 100%;
     
+}
+.top-btn {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 3;
+    outline: none; /* Remove outline */
+    background-color: rgba(0,0,0,0.4); /* Set a background color */
+    color: white; /* Text color */
+    font-family: 'Antonio', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 30px;
+    
+    cursor: pointer;
+}
+
+.top-btn:hover {
+    background-color: rgba(75, 75, 75,1);
 }
 footer{
     background-color: black;
