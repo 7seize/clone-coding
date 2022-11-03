@@ -63,7 +63,7 @@ let movearr = function(){
     prominiimg.forEach((ele,key)=>{
         ele.addEventListener('click',function(){
                 event.preventDefault();
-                evnetnum = key;
+                evnetnum = key + 1;
                 probigmig.style =`transform: translateX(-${100*evnetnum}%);`
             });
     })
