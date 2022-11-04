@@ -63,7 +63,7 @@ let movearr = function(){
     prominiimg.forEach((ele,key)=>{
         ele.addEventListener('click',function(){
                 event.preventDefault();
-                evnetnum = key+1;
+                evnetnum = key + 1;
                 probigmig.style =`transform: translateX(-${100*evnetnum}%);`
             });
     })
@@ -128,10 +128,3 @@ probtn.addEventListener('click',()=>{
     sessionStorage.setItem('cashpro',procount)
 });
 
-window.onresize = function(event){
-
-if(innerWidth <= "992"){
-    procount = 1;
-    proadd.innerHTML=`<input class="product-add" type="text" value="${procount}">`
-};
-}
