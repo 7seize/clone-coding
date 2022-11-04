@@ -1,0 +1,40 @@
+{
+    "product":[
+        {
+            "productNum": 1,
+            "img":["./img/product_page/big-1.jpg", "./img/product_page/big-1.jpg"],
+            "imgNum":5,
+            "thumb":"./img/product_page/sm-1.jpg",
+            "thumbNum":5,
+            "name":"ALUMINUM WALLET + MONEY CLIP",
+            "price": 95,
+            "brend":"THE RIDGE",
+            "color":"black",
+            "stock":4
+        },
+        {
+            "productNum": 2,
+            "img":"./img/product_page/big-1.jpg",
+            "imgNum":5,
+            "thumb":"./img/product_page/sm-1.jpg",
+            "thumbNum":5,
+            "name":"ALUMINUM WALLET + MONEY CLIP",
+            "price": 95,
+            "brend":"THE RIDGE",
+            "color":"blue",
+            "stock":10
+        },
+        {
+            "productNum": 3,
+            "img":"./img/product_page/big-1.jpg",
+            "imgNum":5,
+            "thumb":"./img/product_page/sm-1.jpg",
+            "thumbNum":5,
+            "name":"ALUMINUM WALLET + MONEY CLIP",
+            "price": 95,
+            "brend":"THE RIDGE",
+            "color":"desert",
+            "stock":3
+        }
+    ]
+}

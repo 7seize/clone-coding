@@ -210,6 +210,7 @@ body{
 .bag{
     position: relative;
     display: inline-block;
+    margin-right: 1rem;
 }
 .bag img{
     position: absolute;
@@ -493,7 +494,9 @@ main{
     display: block;
     transform: translateX(0);
 }
-
+.left-nav-con{
+    margin-bottom: 10rem;
+}
 .left-bug form {
     margin: 0 1.5rem 0;
 }

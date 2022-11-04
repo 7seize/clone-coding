@@ -24,17 +24,17 @@ let movearr = function(){
     probigmig.append(Fclone);
 
     //제품 처음에 마지막 그림 추가
-    let Lclone =profigure[4].cloneNode(true);
+    let Lclone =profigure[prominiimg.length-1].cloneNode(true);
     probigmig.prepend(Lclone);
 
     //끝까지 가면 처음으로 돌아오게 하기
     FLclone = function(){
         setTimeout(()=>{
-            if(evnetnum >= 6){
+            if(evnetnum >= prominiimg.length+1){
                 evnetnum = 1;
                     probigmig.style =`transition:0s;transform: translateX(-${100*evnetnum}%);`
             }else if(evnetnum <= 0){
-                evnetnum = 5;
+                evnetnum = prominiimg.length;
                 probigmig.style =`transition:0s;transform: translateX(-${100*evnetnum}%);`
             };
         },550)
@@ -63,7 +63,7 @@ let movearr = function(){
     prominiimg.forEach((ele,key)=>{
         ele.addEventListener('click',function(){
                 event.preventDefault();
-                evnetnum = key;
+                evnetnum = key+1;
                 probigmig.style =`transform: translateX(-${100*evnetnum}%);`
             });
     })

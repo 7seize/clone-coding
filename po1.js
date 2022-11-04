@@ -120,7 +120,7 @@ const closer = document.querySelector('.closer img');
 
 setTimeout(() => {
     popup.style = 'display: block;'
-}, 2000);
+}, 7000);
 
 closer.addEventListener('click',()=>{
         popup.style = 'display: none;'
